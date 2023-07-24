@@ -16,5 +16,6 @@
 
 void cmdex(char **argv);
 char *_strcpy(char *dest, char *src);
+char *loc(char *charac);
 
 #endif /* SHELLSH_h */
