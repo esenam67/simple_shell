@@ -2,11 +2,13 @@
 
 /**
  * main - check function
+ * @ac: int
+ * @argv: pointer to pointer
  * Description: Printing a prompt
  * Return: 0
  */
 
-int main(void)
+int main(int ac, char **argv)
 {
 char *ThePro = "KhaSi$ ", *Entry;
 size_t TheSize = 0;
@@ -15,8 +17,10 @@ ssize_t CheckRtr;
 char *Entry_copy = NULL;
 const char *del = " \n";
 char *t;
-char **argv;
 int i, tt = 0;
+/* declaring void variables so that no error of a var non used*/
+(void)ac;
+
 /* 3rd step of looping */
 while (1)
 {
@@ -28,6 +32,13 @@ write(STDOUT_FILENO, ThePro, 7);
  */
 
 CheckRtr = getline(&Entry, &TheSize, stdin);
+/* 4th check if failed or reached EOF or user use CTRL + D */
+if (CheckRtr == -1)
+{
+printf("Exit.........route\n");
+return (-1);
+}
+
 /* 5th allocation of memo for the Entry_copy*/
 Entry_copy = malloc(sizeof(char) * CheckRtr);
 if (Entry_copy == NULL)
@@ -35,18 +46,9 @@ if (Entry_copy == NULL)
 perror("tsh: memory allocation error");
 return (-1);
 }
-
 /*6th a copy of the Entry*/
 _strcpy(Entry_copy, Entry);
 
-/* 4th check if failed or reached EOF or user use CTRL + D */
-if (CheckRtr == -1)
-{
-printf("Exit.........route\n");
-return (-1);
-}
-else
-{
 /* 7th string tokenization */
 t = strtok(Entry, del);
 /* 8th numbr of tokens in the string */
@@ -70,15 +72,17 @@ _strcpy(argv[i], t);
 t = strtok(NULL, del);
 }
 argv[i] = NULL;
-
-
+/* execute the command */
+cmdex(argv);
+}
 /*
-* freeing the allocated memo for Entry not created by us is not neccessary
+* freeing the allocated memo not created by us is not neccessary
 * i got the  free(): double free detected error
 */
+
+
 free(argv);
 free(Entry_copy);
-}
-}
+/*}*/
 return (0);
 }

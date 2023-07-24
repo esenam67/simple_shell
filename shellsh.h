@@ -14,6 +14,7 @@
 #include <fcntl.h>
 #include <errno.h>
 
+void cmdex(char **argv);
 char *_strcpy(char *dest, char *src);
 
 #endif /* SHELLSH_h */
