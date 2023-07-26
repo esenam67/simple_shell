@@ -11,7 +11,8 @@ char *ThePro = "$ ", *Entry, *Entry_copy = NULL, *t;
 size_t TheSize = 0;
 ssize_t CheckRtr;
 const char *del = " \n";
-int i, tt = 0; (void)ac;
+int i, tt = 0;
+(void)ac;
 while (1)
 {
 write(STDOUT_FILENO, ThePro, 2);
@@ -44,7 +45,6 @@ t = strtok(NULL, del);
 argv[i] = NULL;
 cmdex(argv);
 }
-free(argv);
 free(Entry_copy);
 return (0);
 }
