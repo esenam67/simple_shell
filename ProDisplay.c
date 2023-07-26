@@ -1,5 +1,4 @@
 #include "shellsh.h"
-
 /**
  * main - check function
  * @ac: int
@@ -7,10 +6,9 @@
  * Description: Printing a prompt
  * Return: 0
  */
-
 int main(int ac, char **argv)
 {
-char *ThePro = "#cisfun$ ", *Entry;
+char *ThePro = "$ ", *Entry;
 size_t TheSize = 0;
 ssize_t CheckRtr;
 /*for the use of strtok*/
@@ -25,7 +23,7 @@ int i, tt = 0;
 while (1)
 {
  /* 1st Printing a prompt */
-write(STDOUT_FILENO, ThePro, 9);
+write(STDOUT_FILENO, ThePro, 2);
 /*
  * 2nd print and read what is typed in and then we store the
  * return value in CheckRtr
