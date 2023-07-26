@@ -10,7 +10,7 @@
 
 int main(int ac, char **argv)
 {
-char *ThePro = "KhaSi$ ", *Entry;
+char *ThePro = "#cisfun$ ", *Entry;
 size_t TheSize = 0;
 ssize_t CheckRtr;
 /*for the use of strtok*/
