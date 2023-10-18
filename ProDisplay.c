@@ -9,7 +9,7 @@
 int main(void)
 {
 char *ThePro = "$ ";
-while(1)
+while (1)
 {
 write(STDOUT_FILENO, ThePro, 2);
 thegetline();

@@ -1,6 +1,12 @@
 #include "shellsh.h"
 
-int thegetline()
+/**
+ * thegetline - check funtion
+ * Description:
+ * Return: an int
+ */
+
+int thegetline(void)
 {
 char  *Entry;
 size_t TheSize = 0;
@@ -14,5 +20,5 @@ return (-1);
 }
 printf("%s\n", Entry);
 free(Entry);
-return(0);
+return (0);
 }
