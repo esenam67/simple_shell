@@ -18,7 +18,7 @@ if  (CheckRtr == -1)
 printf("Exit.........route\n");
 return (-1);
 }
-printf("%s\n", Entry);
+write(STDIN_FILENO, Entry, TheSize);
 free(Entry);
 return (0);
 }
