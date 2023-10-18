@@ -14,6 +14,6 @@
 #include <fcntl.h>
 #include <errno.h>
 
- int thegetline(void);
+int thegetline(void);
 
 #endif /* SHELLSH_h */
