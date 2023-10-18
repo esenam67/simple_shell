@@ -15,5 +15,6 @@
 #include <errno.h>
 
 int thegetline(void);
+char *_cpystr(char *dest, char *src);
 
 #endif /* SHELLSH_h */
